@@ -4,12 +4,8 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        -->
-        <link href="./css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap 5.3 pelo CDN (jsDelivr) -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
         <link href="./css/estilo.css" rel="stylesheet">
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -25,49 +21,49 @@
             <header>
 
                 <div class="container">
-                    <div class="carousel slide" data-ride="carousel" id="galeria">
-                        <ol class="carousel-indicators">
-                            <li data-target="#galeria" data-slide-to="0" class="active"></li>
-                            <li data-target="#galeria" data-slide-to="1"></li>
-                            <li data-target="#galeria" data-slide-to="2"></li>
-                            <li data-target="#galeria" data-slide-to="3"></li>
-                        </ol>
+                    <div class="carousel slide" id="galeria">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#galeria" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Imagem 1"></button>
+                            <button type="button" data-bs-target="#galeria" data-bs-slide-to="1" aria-label="Imagem 2"></button>
+                            <button type="button" data-bs-target="#galeria" data-bs-slide-to="2" aria-label="Imagem 3"></button>
+                            <button type="button" data-bs-target="#galeria" data-bs-slide-to="3" aria-label="Imagem 4"></button>
+                        </div>
                         <div class="carousel-inner">
-                            <div class="item active">
-                                <img src="./images/front-end.jpg" class="img-responsive">
+                            <div class="carousel-item active">
+                                <img src="./images/front-end.jpg" class="d-block w-100">
                             </div>
-                            <div class="item">
-                                <img src="./images/cod-html.jpg" class="img-responsive">
+                            <div class="carousel-item">
+                                <img src="./images/cod-html.jpg" class="d-block w-100">
                             </div>
-                            <div class="item">
-                                <img src="./images/html-css-javascript.jpg" class="img-responsive">
+                            <div class="carousel-item">
+                                <img src="./images/html-css-javascript.jpg" class="d-block w-100">
                             </div>
-                            <div class="item">
-                                <img src="./images/front-end-plataformas.jpg" class="img-responsive">
-                            </div>    
+                            <div class="carousel-item">
+                                <img src="./images/front-end-plataformas.jpg" class="d-block w-100">
+                            </div>
                         </div><!-- Fim do carousel-inner -->
 
-                        <a class="left carousel-control" 
-                            href="#galeria" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left"></span>
-                        </a>
-                        <a class="right carousel-control" 
-                            href="#galeria" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right"></span>
-                        </a>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#galeria" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#galeria" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Próxima</span>
+                        </button>
                     </div><!-- Fim do carousel -->  
                 </div>
                     <section class="container">
                 
                         <ul class="nav nav-pills nav-justified">
                             <li class="nav-item">
-                                <a  href="#html">HTML5</a>
+                                <a class="nav-link" href="#html">HTML5</a>
                             </li>
                             <li class="nav-item">
-                                <a  href="#css">CSS3</a>
+                                <a class="nav-link" href="#css">CSS3</a>
                             </li>
                             <li class="nav-item">
-                                <a  href="#javascript">JavaScript</a>
+                                <a class="nav-link" href="#javascript">JavaScript</a>
                             </li>
                         </ul>
                     </section>
@@ -185,8 +181,8 @@
             <footer>Desenvolvedor-Paulo de Tarso</footer>
         </main> 
 
-         <script src="./js/jquery.js"></script>
-         <script src="./js/bootstrap.min.js"></script> 
+         <!-- JavaScript do Bootstrap 5.3 pelo CDN (não precisa de jQuery) -->
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
          <script src="./js/script.js"></script>    
     </body>
 
