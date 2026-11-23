@@ -1,89 +1,155 @@
-html {
-    
-    scroll-behavior: smooth;
+/* ===== Página ===== */
+
+/* Rolagem suave ao clicar nos botões, só para quem não pediu "reduzir movimento" */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
 }
 
 body {
+    background-color: #0b0b0b;
     background-image: url(../images/back-numeros.png);
-
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
-main { 
+/* Área central: o fundo cobre a altura toda, sem "corte" no meio da página */
+main {
+    width: 80%;
+    margin: 0 auto 10px;
+    background-color: #1b1b1b;
+    /* camada escura por cima da imagem, para o texto claro ter bom contraste */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(../images/back-black2.jpg);
+    background-size: cover;
+    background-position: center top;
+}
 
-    width:80%; 
-    margin:-1px auto 10px; 
-    background-image: url(../images/back-black2.jpg);
-    
-    font-family:Arial, Helvetica, sans-serif 
+/* No celular, a área central ocupa a tela toda */
+@media (max-width: 767px) {
+    main {
+        width: 100%;
+    }
+
+    header {
+        width: 92%;
+    }
 }
 
 header {
-    float: center;
-    margin-left: 10%;
-    margin-right: 10%;
     width: 76%;
+    margin: 0 auto;
 }
 
-div.container {
-    width: 100%;
+/* ===== Carrossel ===== */
+
+div.carousel-inner {
+    max-height: 550px;
 }
 
-section.container {
-    width: 100%;
+@media (min-width: 1170px) {
+    div.carousel-inner {
+        max-height: 700px;
+    }
 }
 
-ul {
-    width: 100%;
-}
+/* ===== Menu (HTML5, CSS3, JavaScript) ===== */
+/* O estilo de "botão" vale só para o menu, não para outras listas da página */
 
-li {
-    width: 100%;
-    background-color: rgba(236, 236, 236, 0.699);
-    border-style: solid;
+.nav-pills .nav-item {
+    background-color: rgba(236, 236, 236, 0.7);
+    border: 3px solid rgb(15, 15, 15);
     border-radius: 10px;
-    border-color: rgb(15, 15, 15);
-    
 }
 
-a {
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
+.nav-pills .nav-link {
+    font-weight: 700;
 }
 
+/* ===== Conteúdo ===== */
+
+/* Largura de leitura confortável: cerca de 70 caracteres por linha */
 div.conteudo {
-     float: center;
-     margin:10% 10%; 
-     width:76%;
-     text-align: center;
+    max-width: 70ch;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    color: rgb(236, 236, 236);
 }
 
-h1, h2, h3, p {
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
+div.conteudo h1,
+div.conteudo h2,
+div.conteudo h3 {
+    font-weight: 700;
     text-align: center;
     color: rgb(236, 236, 236);
 }
 
-div.carousel-inner {
-
-    max-height: 550px;
+div.conteudo h2 {
+    margin-top: 2.5rem;
 }
 
-@media (min-width:1170px) {
-
-    div.carousel-inner {
-        max-height: 700px;
-    }    
+div.conteudo p {
+    font-weight: 500;
+    line-height: 1.6;
+    text-align: left;
 }
 
-footer { 
-    font-family: 'Roboto', sans-serif;
-    clear:both; 
-    width:50%; 
-    margin:0 auto; 
-    font-size:0.95em; 
-    text-align:center; 
-    background-color:#ECECEC; 
-    padding:5px 
+/* Código citado no texto: cor clara com bom contraste no fundo escuro */
+div.conteudo code {
+    color: #ffd27a;
+    background-color: rgba(0, 0, 0, 0.45);
+    padding: 0.1em 0.3em;
+    border-radius: 4px;
 }
 
+div.conteudo a {
+    color: #9ec5fe;
+}
+
+/* ===== Navegação pelas seções ===== */
+
+/* Folga no topo quando o botão leva até a seção */
+#html,
+#css,
+#javascript {
+    scroll-margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+/* Espaço no fim da página: assim qualquer seção consegue chegar ao topo da tela,
+   mesmo em telas altas */
+#fontes {
+    min-height: 100vh;
+    padding-top: 2rem;
+}
+
+/* Destaque do título da seção escolhida pelo botão (:target) */
+:target > h3 {
+    background-color: rgba(158, 197, 254, 0.25);
+    border-radius: 8px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :target > h3 {
+        animation: destaque 2s ease-out;
+    }
+}
+
+@keyframes destaque {
+    from {
+        background-color: rgba(158, 197, 254, 0.8);
+    }
+    to {
+        background-color: rgba(158, 197, 254, 0.25);
+    }
+}
+
+/* ===== Rodapé ===== */
+
+footer {
+    width: 50%;
+    margin: 0 auto;
+    padding: 5px;
+    font-size: 0.95em;
+    text-align: center;
+    background-color: #ececec;
+}
