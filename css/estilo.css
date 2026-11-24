@@ -46,6 +46,11 @@ div.carousel-inner {
     max-height: 550px;
 }
 
+/* A altura acompanha a largura: sem isso, a imagem fica esticada no celular */
+.carousel-item img {
+    height: auto;
+}
+
 @media (min-width: 1170px) {
     div.carousel-inner {
         max-height: 700px;
